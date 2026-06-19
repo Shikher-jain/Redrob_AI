@@ -4,10 +4,13 @@
 
 ---
 
+## Live demo of the reasoning output (with sample candidates):
+[Streamlit App (Demo)](https://shikher-jain-redrob0ai1.streamlit.app/)
+[Video Demo](https://www.loom.com/share/f4ff7a1514cb49daa867af09621aca4e)
 ## Architecture
 
 ```
-candidates.jsonl (100K)
+candidates.jsonl (100K candidates) + job_description.txt
         │
         ▼
 ┌───────────────────┐
