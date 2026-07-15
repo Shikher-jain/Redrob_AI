@@ -12,3 +12,5 @@ build/
 data/candidates.jsonl
 data/candidates.jsonl.gz
 outputs/.embed_cache/
+
+*.jsonl
