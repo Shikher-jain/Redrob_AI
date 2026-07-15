@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+outputs/.embed_cache/
+outputs/*.csv
+!outputs/sample_submission.csv
+.env
+*.egg-info/
+dist/
+build/
