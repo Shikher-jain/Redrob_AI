@@ -1,0 +1,52 @@
+team_name: "shikher-redrob-ranker"
+
+primary_contact:
+  name: "Shikher Jain"
+  email: "your@email.com"
+  phone: "+91-XXXXXXXXXX"
+
+team_members:
+  - name: "Shikher Jain"
+    email: "your@email.com"
+    role: "ML Engineer"
+
+github_repo: "https://github.com/YOUR_USERNAME/redrob-ranker"
+sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+reproduce_command: "python src/main.py --candidates data/candidates.jsonl --out outputs/submission.csv"
+
+compute:
+  platform: "Local CPU machine"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: true
+  pre_computation_time_minutes: 3
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude for architecture discussion, code review, and debugging.
+  No candidate data was fed to any LLM.
+  All ranking logic is implemented in local Python — no API calls during ranking.
+
+methodology_summary: |
+  Hybrid semantic + structured feature ranker. Semantic layer uses
+  sentence-transformers all-MiniLM-L6-v2 (LSA/TF-IDF fallback for offline use).
+  Structured features: career quality (YOE, product vs consulting fraction,
+  title alignment, production evidence), skill match (proficiency × credibility
+  from endorsements + duration, assessment override), behavioral engagement (23
+  Redrob signals weighted by recruiter response rate), location/availability.
+  Honeypot detection via date inconsistency and zero-evidence expert skills.
+  Second-pass reranker surfaces plain-language candidates by scanning role
+  descriptions for IR/ML work evidence. Runtime <5 min on CPU.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
